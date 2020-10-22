@@ -1,0 +1,7 @@
+Running: xsim.dir/test_bandaAsamblare_behav/xsimk.exe -simmode gui -wdb test_bandaAsamblare_behav.wdb -simrunnum 0 -socket 63629
+Design successfully loaded
+Design Loading Memory Usage: 6400 KB (Peak: 6400 KB)
+Design Loading CPU Usage: 46 ms
+Simulation completed
+Simulation Memory Usage: 7020 KB (Peak: 7020 KB)
+Simulation CPU Usage: 46 ms

@@ -1,0 +1,7 @@
+Running: xsim.dir/test_registru_multifunctional_behav/xsimk.exe -simmode gui -wdb test_registru_multifunctional_behav.wdb -simrunnum 0 -socket 63000
+Design successfully loaded
+Design Loading Memory Usage: 6412 KB (Peak: 6412 KB)
+Design Loading CPU Usage: 46 ms
+Simulation completed
+Simulation Memory Usage: 7040 KB (Peak: 7040 KB)
+Simulation CPU Usage: 46 ms
