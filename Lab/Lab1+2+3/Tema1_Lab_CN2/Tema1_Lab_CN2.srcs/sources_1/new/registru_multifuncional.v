@@ -15,30 +15,37 @@ reg[3:0] int_reg;
 
 always @( posedge clk or reset )
 begin 
+        
 if (reset)
     out = 4'b0000;
-else if (EN == 1)    
-    begin
-        int_reg = intrare_reg;
+else if (EN == 1)
+begin
+out = intrare_reg;
+end 
+else 
+begin
+
         if (INC == 1)
         begin
-            out = int_reg + 1; 
+            out = out + 1; 
         end 
-        else if (DEC == 1)
+        
+        if (DEC == 1)
         begin
-            out = int_reg - 1; 
+            out = out - 1; 
         end 
-        else if (SHL == 1)
+        
+        if (SHL == 1)
         begin
-            out = int_reg << 1; 
+            out = out << 1; 
         end 
-        else if (SHR == 1)
+        
+        if (SHR == 1)
         begin
-           out = int_reg >> 1; 
+           out = out >> 1; 
         end 
-        else
-        out = int_reg;
-   end 
+  end
+   
 end
  
 

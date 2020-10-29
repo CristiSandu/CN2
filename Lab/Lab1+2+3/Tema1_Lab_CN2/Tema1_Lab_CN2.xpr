@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="49" Path="S:/Cristi/OneDrive - Universitatea Politehnica Bucuresti/ACS -- Seria CC/Anul 3/Semestrul 1/CN2/Lab/Lab 1 + 2 +3/Tema1_Lab_CN2/Tema1_Lab_CN2.xpr">
+<Project Version="7" Minor="49" Path="S:/Cristi/OneDrive - Universitatea Politehnica Bucuresti/ACS -- Seria CC/Anul 3/Semestrul 1/CN2/Lab/Lab1+2+3/Tema1_Lab_CN2/Tema1_Lab_CN2.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="5176b317aebf4f989bafa9278856b7a5"/>
@@ -37,7 +37,7 @@
     <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="101"/>
+    <Option Name="WTXSimLaunchSim" Val="149"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>

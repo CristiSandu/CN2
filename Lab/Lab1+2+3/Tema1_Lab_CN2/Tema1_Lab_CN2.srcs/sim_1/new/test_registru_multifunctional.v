@@ -38,37 +38,42 @@ module test_registru_multifunctional;
     intrarile_pe_1_bite[1],
     intrarile_pe_1_bite[0],
     out);
-  
+  /*
 initial begin
     clk = 1'b0;
     rst = 1'b0;
     repeat(4) #10 clk = ~clk;
    
     forever #10 clk = ~clk;
-end     
+end  */
 
-//always #10 clk = ~clk;
+always #25 clk = ~clk;
     
 initial begin 
 
-#10
+
+clk = 0;
+    rst = 0;
    intrare = 4'b1010; 
-   intrarile_pe_1_bite = 5'b11000;
+   intrarile_pe_1_bite = 5'b01000;
  
 #50
    intrare = 4'b1010; 
-   intrarile_pe_1_bite = 5'b11000;
-#50 
-   intrare = 4'b1110; 
    intrarile_pe_1_bite = 5'b00100;
+#50 
+   intrare = 4'b1010; 
+   intrarile_pe_1_bite = 5'b00010;
+#50 
+
       rst = 1'b0;
 #50
-   intrare = 4'b1011; 
-   intrarile_pe_1_bite = 5'b00010;
+   intrare = 4'b1010; 
+   intrarile_pe_1_bite = 5'b00001;
    
 #50 
    intrare = 4'b1101; 
-   intrarile_pe_1_bite = 5'b10001;
+   intrarile_pe_1_bite = 5'b11000;
+   rst = 0;
 #50 
    intrare = 4'b1111; 
    intrarile_pe_1_bite = 5'b01000;

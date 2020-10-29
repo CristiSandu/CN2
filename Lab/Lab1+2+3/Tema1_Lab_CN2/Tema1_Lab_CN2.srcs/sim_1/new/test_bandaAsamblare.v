@@ -32,19 +32,19 @@ wire[7:0] o;
 
 banda_de_asamblare banda(clk, a, b, c, d, e, f, o);
 
-always #20 clk = ~clk;
+always #10 clk = ~clk;
 
 initial 
 begin 
     clk = 0;
     a = 20; b = 20 ; c = 20; d = 30 ; e = 10 ; f = 5;
-    #40 
-    a = 3; b = 2 ; c = 50; d = 30 ; e = 110 ; f = 5;
-    #40 
+    #20
+    a = 3; b = 2 ; c = 50; d = 31 ; e = 110 ; f = 5;
+    #20
     a = 20; b = 20 ; c = 20; d = 30 ; e = 10 ; f = 5;
-    #40 
+    #20 
     a = 1; b = 1 ; c = 1; d = 1 ; e = 1 ; f = 1;
-    #40 
+    #20 
     a = 40; b = 20 ; c = 25; d = 5 ; e = 10 ; f = 5;
     
 
