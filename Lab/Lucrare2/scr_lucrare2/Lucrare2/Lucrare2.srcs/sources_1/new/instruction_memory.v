@@ -27,11 +27,11 @@ output reg [31:0] instruction
     
     reg [31:0] regmem [0:6] ;
     initial begin
-        $display("Loading rom.");
+        //$display("Loading rom.");
         $readmemh("code.mem", regmem);
     end
     
-    always @(*)
+    always @(address)
     begin 
         case (address)
             0: instruction = regmem[0];
@@ -40,8 +40,8 @@ output reg [31:0] instruction
             3: instruction = regmem[3];
             4: instruction = regmem[4];
             5: instruction = regmem[5];
-            6: instruction = regmem[6];            
-            default : instruction = regmem[0];
+            6: instruction = regmem[6];
+         default: instruction = regmem[address];
         endcase
     end
     

@@ -25,18 +25,11 @@ input clk,res, write,
 input [31:0] in,
 output reg [31:0] out);
 
-reg [31:0] out ;
-
-always @(posedge clk or res) 
-begin
-
-if (res)
-    out = 0;
-else if (write == 1)
-begin
-    out = in;
-end
-    
-end
-
+    always @(posedge clk ) 
+    begin
+        if (res == 1)
+            out = 0;
+        else if (write == 1)
+            out = in;
+    end
 endmodule
