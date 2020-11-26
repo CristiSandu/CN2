@@ -23,11 +23,9 @@
 module imm_gen(input [31:0] in, output reg [31:0] out );
 
 integer i;
- //reg [6:0] opcode;
 always@(in)begin
-   // opcode = ;
     case (in[6:0])
-        7'b1100011:begin //beq, bne, blt, bge ,bltu,bgeu opecode
+        7'b1100011:begin //beq, bne, blt, bge ,bltu,bgeu opecode B
                         out[0] = 0;
                         out[4:1] = in[11:8];
                         out[10:5] = in[30:25];
@@ -36,7 +34,7 @@ always@(in)begin
                             out[i] = in[31];
                         end
                    end
-        7'b0100011:begin //sw opecode
+        7'b0100011:begin //sw opecode S
                         out[0] = in[7];
                         out[4:1] = in[11:8];
                         out[10:5] = in[30:25];
@@ -44,7 +42,7 @@ always@(in)begin
                             out[i] = in[31];
                         end
                    end
-        7'b0010011:begin //addi,andi,ori,xori,slti,sltiu,srli,srai,slli opecode
+        7'b0010011:begin //addi,andi,ori,xori,slti,sltiu,srli,srai,slli opecode I
                         out[0] = in[20];
                         out[4:1] = in[24:21];
                         out[10:5] = in[30:25];
@@ -52,7 +50,7 @@ always@(in)begin
                             out[i] = in[31];
                         end
                    end
-        7'b0000011:begin //lw opecode
+        7'b0000011:begin //lw opecode I
                         out[0] = in[20];
                         out[4:1] = in[24:21];
                         out[10:5] = in[30:25];

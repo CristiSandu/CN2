@@ -50,7 +50,7 @@ adder add(ina,inb,out);
 
 #50; 
  end*/
- 
+/* 
 reg clk,reset;
 reg PCSrc, PC_write;
 reg [31:0] PC_Branch;
@@ -77,7 +77,7 @@ always #10 clk = ~clk;
     
   
   end
-   
+*/   
   /*  
 reg [31:0] ina,inb;
 reg sel;
@@ -100,13 +100,13 @@ inb = 32'b00000000000000000000000000000011;
 end
 
 */
-/*
+
 // simulare registers ex3
 reg clk, reg_write;
 reg [4:0] read_reg1, read_reg2, write_reg;
 reg [31:0] write_data;
 wire [31:0] read_data1, read_data2;
-integer i;
+
 
 registers regs(clk,reg_write,
                  read_reg1, read_reg2, write_reg,
@@ -123,9 +123,33 @@ initial begin
   read_reg2 = 5'b00010;
   write_reg = 5'b00011;
   write_data = 32'b00000000000000000000000000000101;
+  #50
+  reg_write = 1;
+  read_reg1 = 5'b00001;
+  read_reg2 = 5'b00010;
+  write_reg = 5'b000001;
+  write_data = 32'b00000000000000000000000000000111;
+  #50
+  reg_write = 1;
+  read_reg1 = 5'b00001;
+  read_reg2 = 5'b00011;
+  write_reg = 5'b000001;
+  write_data = 32'b00000000000000000000000000010111;
+  #50
+  reg_write = 1;
+  read_reg1 = 5'b00011;
+  read_reg2 = 5'b00010;
+  write_reg = 5'b000001;
+  write_data = 32'b00000000000000000000000000000111;
+   #50
+  reg_write = 0;
+  read_reg1 = 5'b00011;
+  read_reg2 = 5'b00010;
+  write_reg = 5'b000011;
+  write_data = 32'b00000000000000000000000000000111;
    
 end
- */
+ 
  
  // imm_gen simulation 
  /*
