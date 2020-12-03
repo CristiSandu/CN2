@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Thu Dec  3 16:34:40 2020
+# Process ID: 12284
+# Current directory: S:/Cristi/OneDrive - Universitatea Politehnica Bucuresti/ACS -- Seria CC/Anul 3/Semestrul 1/CN2/Lab/Lucrare3/IF_ID
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent26736 S:\Cristi\OneDrive - Universitatea Politehnica Bucuresti\ACS -- Seria CC\Anul 3\Semestrul 1\CN2\Lab\Lucrare3\IF_ID\IF_ID.xpr
+# Log file: S:/Cristi/OneDrive - Universitatea Politehnica Bucuresti/ACS -- Seria CC/Anul 3/Semestrul 1/CN2/Lab/Lucrare3/IF_ID/vivado.log
+# Journal file: S:/Cristi/OneDrive - Universitatea Politehnica Bucuresti/ACS -- Seria CC/Anul 3/Semestrul 1/CN2/Lab/Lucrare3/IF_ID\vivado.jou
+#-----------------------------------------------------------
+start_gui
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Dec  3 17:09:08 2020...

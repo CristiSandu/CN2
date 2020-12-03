@@ -1,0 +1,86 @@
+////////////////////////////////////////CONTROL_PATH_MODULE///////////////////////////////////////////////////      
+module control_path(input [6:0] opcode,
+                    input control_sel,
+                    output reg MemRead,MemtoReg,MemWrite,RegWrite,Branch,ALUSrc,
+                    output reg [1:0] ALUop);
+
+//////////////////////////////////////////ALU_CONTROL_MODULE/////////////////////////////////////////////////
+module ALUcontrol(input [1:0] ALUop,
+                  input [6:0] funct7,
+                  input [2:0] funct3,
+                  output reg [3:0] ALUinput);
+
+////////////////////////////////////////////ALU_MODULE///////////////////////////////////////////////////////
+module ALU(input [3:0] ALUop,
+           input [31:0] ina,inb,
+           output zero,
+           output reg [31:0] out);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+module EX(input [31:0] IMM_EX,         
+          input [31:0] REG_DATA1_EX,
+          input [31:0] REG_DATA2_EX,
+          input [31:0] PC_EX,
+          input [2:0] FUNCT3_EX,
+          input [6:0] FUNCT7_EX,
+          input [4:0] RD_EX,
+          input [4:0] RS1_EX,
+          input [4:0] RS2_EX,
+          input RegWrite_EX,
+          input MemtoReg_EX,
+          input MemRead_EX,
+          input MemWrite_EX,
+          input [1:0] ALUop_EX,
+          input ALUSrc_EX,
+          input Branch_EX,
+          input [1:0] forwardA,forwardB,
+          
+          input [31:0] ALU_DATA_WB,
+          input [31:0] ALU_OUT_MEM,
+          
+          output ZERO_EX,
+          output [31:0] ALU_OUT_EX,
+          output [31:0] PC_Branch_EX,
+          output [31:0] REG_DATA2_EX_FINAL
+          );
+
+////////////////////////////////////////////DATA_MEMORY///////////////////////////////////////////////////////
+module data_memory(input clk,       
+                   input mem_read,
+                   input mem_write,
+                   input [31:0] address,
+                   input [31:0] write_data,
+                   output reg [31:0] read_data
+                   );
+
+//////////////////////////////////////////HAZARD_DETECTION_UNIT///////////////////////////////////////////////
+module hazard_detection(input [4:0] rd,
+                        input [4:0] rs1,
+                        input [4:0] rs2,
+                        input MemRead,
+                        output reg PCwrite,
+                        output reg IF_IDwrite,
+                        output reg control_sel);
+
+////////////////////////////////////////FORWARDING_MODULE/////////////////////////////////////////////////////
+module forwarding(input [4:0] rs1,
+                  input [4:0] rs2,
+                  input [4:0] ex_mem_rd,
+                  input [4:0] mem_wb_rd,
+                  input ex_mem_regwrite,
+                  input mem_wb_regwrite,
+                  output reg [1:0] forwardA,forwardB);
+
+//////////////////////////////////////////////RISC-V_MODULE///////////////////////////////////////////////////
+module RISC_V(input clk,
+              input reset,
+              
+              output [31:0] PC_EX,
+              output [31:0] ALU_OUT_EX,
+              output [31:0] PC_MEM,
+              output PCSrc,
+              output [31:0] DATA_MEMORY_MEM,
+              output [31:0] ALU_DATA_WB,
+              output [1:0] forwardA, forwardB,
+              output pipeline_stall
+             );

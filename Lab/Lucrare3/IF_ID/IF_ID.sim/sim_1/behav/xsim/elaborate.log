@@ -1,0 +1,25 @@
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: S:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto bb560ed3935d47718a06097adf9806b4 --incr --debug all --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot RISC_V_TB_behav xil_defaultlib.RISC_V_TB xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "S:/Cristi/OneDrive - Universitatea Politehnica Bucuresti/ACS -- Seria CC/Anul 3/Semestrul 1/CN2/Lab/Lucrare3/IF_ID/IF_ID.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "S:/Cristi/OneDrive - Universitatea Politehnica Bucuresti/ACS -- Seria CC/Anul 3/Semestrul 1/CN2/Lab/Lucrare3/IF_ID/IF_ID.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.PC
+Compiling module xil_defaultlib.instruction_memory
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.mux2_1
+Compiling module xil_defaultlib.IF
+Compiling module xil_defaultlib.IF_ID_reg
+Compiling module xil_defaultlib.registers
+Compiling module xil_defaultlib.imm_gen
+Compiling module xil_defaultlib.ID
+Compiling module xil_defaultlib.RISC_V_IF_ID
+Compiling module xil_defaultlib.RISC_V_TB
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot RISC_V_TB_behav

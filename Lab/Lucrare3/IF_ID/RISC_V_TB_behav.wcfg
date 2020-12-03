@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="RISC_V_TB_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="RISC_V_TB" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="67658112fs"></ZoomEndTime>
+      <Cursor1Time time="14725000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="293"></NameColumnWidth>
+      <ValueColumnWidth column_width="249"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="51" />
+   <wvobject type="logic" fp_name="/RISC_V_TB/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/RISC_V_TB/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/RISC_V_TB/RV/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/RISC_V_TB/RV/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/PC_IF">
+      <obj_property name="ElementShortName">PC_IF[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PC_IF[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/PC_4_IF">
+      <obj_property name="ElementShortName">PC_4_IF[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PC_4_IF[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/PC_MUX">
+      <obj_property name="ElementShortName">PC_MUX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PC_MUX[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/INSTRUCTION_IF">
+      <obj_property name="ElementShortName">INSTRUCTION_IF[31:0]</obj_property>
+      <obj_property name="ObjectShortName">INSTRUCTION_IF[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/instruction_address">
+      <obj_property name="ElementShortName">instruction_address[9:0]</obj_property>
+      <obj_property name="ObjectShortName">instruction_address[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/PC_ID">
+      <obj_property name="ElementShortName">PC_ID[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PC_ID[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/INSTRUCTION_ID">
+      <obj_property name="ElementShortName">INSTRUCTION_ID[31:0]</obj_property>
+      <obj_property name="ObjectShortName">INSTRUCTION_ID[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/IMM_ID">
+      <obj_property name="ElementShortName">IMM_ID[31:0]</obj_property>
+      <obj_property name="ObjectShortName">IMM_ID[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/REG_DATA1_ID">
+      <obj_property name="ElementShortName">REG_DATA1_ID[31:0]</obj_property>
+      <obj_property name="ObjectShortName">REG_DATA1_ID[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/REG_DATA2_ID">
+      <obj_property name="ElementShortName">REG_DATA2_ID[31:0]</obj_property>
+      <obj_property name="ObjectShortName">REG_DATA2_ID[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/RISC_V_TB/RV/RegWrite_ID">
+      <obj_property name="ElementShortName">RegWrite_ID</obj_property>
+      <obj_property name="ObjectShortName">RegWrite_ID</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/RISC_V_TB/RV/MemtoReg_ID">
+      <obj_property name="ElementShortName">MemtoReg_ID</obj_property>
+      <obj_property name="ObjectShortName">MemtoReg_ID</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/RISC_V_TB/RV/MemRead_ID">
+      <obj_property name="ElementShortName">MemRead_ID</obj_property>
+      <obj_property name="ObjectShortName">MemRead_ID</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/RISC_V_TB/RV/MemWrite_ID">
+      <obj_property name="ElementShortName">MemWrite_ID</obj_property>
+      <obj_property name="ObjectShortName">MemWrite_ID</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/ALUop_ID">
+      <obj_property name="ElementShortName">ALUop_ID[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUop_ID[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/RISC_V_TB/RV/ALUSrc_ID">
+      <obj_property name="ElementShortName">ALUSrc_ID</obj_property>
+      <obj_property name="ObjectShortName">ALUSrc_ID</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/RISC_V_TB/RV/Branch_ID">
+      <obj_property name="ElementShortName">Branch_ID</obj_property>
+      <obj_property name="ObjectShortName">Branch_ID</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/RISC_V_TB/RV/pipeline_stall">
+      <obj_property name="ElementShortName">pipeline_stall</obj_property>
+      <obj_property name="ObjectShortName">pipeline_stall</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/FUNCT3_ID">
+      <obj_property name="ElementShortName">FUNCT3_ID[2:0]</obj_property>
+      <obj_property name="ObjectShortName">FUNCT3_ID[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/FUNCT7_ID">
+      <obj_property name="ElementShortName">FUNCT7_ID[6:0]</obj_property>
+      <obj_property name="ObjectShortName">FUNCT7_ID[6:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/OPCODE">
+      <obj_property name="ElementShortName">OPCODE[6:0]</obj_property>
+      <obj_property name="ObjectShortName">OPCODE[6:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/RD_ID">
+      <obj_property name="ElementShortName">RD_ID[4:0]</obj_property>
+      <obj_property name="ObjectShortName">RD_ID[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/RS1_ID">
+      <obj_property name="ElementShortName">RS1_ID[4:0]</obj_property>
+      <obj_property name="ObjectShortName">RS1_ID[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/RS2_ID">
+      <obj_property name="ElementShortName">RS2_ID[4:0]</obj_property>
+      <obj_property name="ObjectShortName">RS2_ID[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/RISC_V_TB/RV/IF_ID_write">
+      <obj_property name="ElementShortName">IF_ID_write</obj_property>
+      <obj_property name="ObjectShortName">IF_ID_write</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/PC_EX">
+      <obj_property name="ElementShortName">PC_EX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PC_EX[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/IMM_EX">
+      <obj_property name="ElementShortName">IMM_EX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">IMM_EX[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/REG_DATA1_EX">
+      <obj_property name="ElementShortName">REG_DATA1_EX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">REG_DATA1_EX[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/REG_DATA2_EX">
+      <obj_property name="ElementShortName">REG_DATA2_EX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">REG_DATA2_EX[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/RISC_V_TB/RV/RegWrite_EX">
+      <obj_property name="ElementShortName">RegWrite_EX</obj_property>
+      <obj_property name="ObjectShortName">RegWrite_EX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/RISC_V_TB/RV/MemtoReg_EX">
+      <obj_property name="ElementShortName">MemtoReg_EX</obj_property>
+      <obj_property name="ObjectShortName">MemtoReg_EX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/RISC_V_TB/RV/MemRead_EX">
+      <obj_property name="ElementShortName">MemRead_EX</obj_property>
+      <obj_property name="ObjectShortName">MemRead_EX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/RISC_V_TB/RV/MemWrite_EX">
+      <obj_property name="ElementShortName">MemWrite_EX</obj_property>
+      <obj_property name="ObjectShortName">MemWrite_EX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/RISC_V_TB/RV/Branch_EX">
+      <obj_property name="ElementShortName">Branch_EX</obj_property>
+      <obj_property name="ObjectShortName">Branch_EX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/ALUop_EX">
+      <obj_property name="ElementShortName">ALUop_EX[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUop_EX[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/RISC_V_TB/RV/ALUSrc_EX">
+      <obj_property name="ElementShortName">ALUSrc_EX</obj_property>
+      <obj_property name="ObjectShortName">ALUSrc_EX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/FUNCT3_EX">
+      <obj_property name="ElementShortName">FUNCT3_EX[2:0]</obj_property>
+      <obj_property name="ObjectShortName">FUNCT3_EX[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/FUNCT7_EX">
+      <obj_property name="ElementShortName">FUNCT7_EX[6:0]</obj_property>
+      <obj_property name="ObjectShortName">FUNCT7_EX[6:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/RD_EX">
+      <obj_property name="ElementShortName">RD_EX[4:0]</obj_property>
+      <obj_property name="ObjectShortName">RD_EX[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/RS1_EX">
+      <obj_property name="ElementShortName">RS1_EX[4:0]</obj_property>
+      <obj_property name="ObjectShortName">RS1_EX[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/RS2_EX">
+      <obj_property name="ElementShortName">RS2_EX[4:0]</obj_property>
+      <obj_property name="ObjectShortName">RS2_EX[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/RISC_V_TB/RV/PC_write">
+      <obj_property name="ElementShortName">PC_write</obj_property>
+      <obj_property name="ObjectShortName">PC_write</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/RISC_V_TB/RV/PC_MEM">
+      <obj_property name="ElementShortName">PC_MEM</obj_property>
+      <obj_property name="ObjectShortName">PC_MEM</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/RISC_V_TB/RV/Branch_MEM">
+      <obj_property name="ElementShortName">Branch_MEM</obj_property>
+      <obj_property name="ObjectShortName">Branch_MEM</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/RISC_V_TB/RV/RegWrite_WB">
+      <obj_property name="ElementShortName">RegWrite_WB</obj_property>
+      <obj_property name="ObjectShortName">RegWrite_WB</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/RISC_V_TB/RV/ALU_DATA_WB">
+      <obj_property name="ElementShortName">ALU_DATA_WB[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ALU_DATA_WB[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/RISC_V_TB/RV/RD_WB">
+      <obj_property name="ElementShortName">RD_WB</obj_property>
+      <obj_property name="ObjectShortName">RD_WB</obj_property>
+   </wvobject>
+</wave_config>
