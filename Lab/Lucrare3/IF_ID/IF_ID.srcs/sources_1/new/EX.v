@@ -81,4 +81,6 @@ wire [3:0] ALU_cont;
          adder add_EX(PC_EX,
                       IMM_EX<<1,
                       PC_Branch_EX);
+        
+        assign REG_DATA2_EX_FINAL = REG_DATA2_EX;
 endmodule
