@@ -60,7 +60,7 @@ wire [3:0] ALU_cont;
                       ALU_DATA_WB, 
                       ALU_OUT_MEM,
                       0,
-                      forwardA,
+                      forwardB,
                       OUT_MUX_2);
          
          mux2_1 mux3_2_1(OUT_MUX_2,
@@ -79,8 +79,8 @@ wire [3:0] ALU_cont;
                          ALU_OUT_EX);
                          
          adder add_EX(PC_EX,
-                      IMM_EX<<1,
+                      IMM_EX,
                       PC_Branch_EX);
         
-        assign REG_DATA2_EX_FINAL = REG_DATA2_EX;
+        assign REG_DATA2_EX_FINAL = OUT_MUX_2;
 endmodule

@@ -1,5 +1,13 @@
 ////////////////////////////////////////CONTROL_PATH_MODULE///////////////////////////////////////////////////      
-module control_path(opcode,control_sel,Branch,MemRead,MemtoReg,ALUop,MemWrite,ALUSrc,RegWrite);
+module control_path(opcode,
+                    control_sel,
+                    Branch,
+                    MemRead,
+                    MemtoReg,
+                    ALUop,
+                    MemWrite,
+                    ALUSrc,
+                    RegWrite);
   
   input [6:0] opcode;
   input control_sel;

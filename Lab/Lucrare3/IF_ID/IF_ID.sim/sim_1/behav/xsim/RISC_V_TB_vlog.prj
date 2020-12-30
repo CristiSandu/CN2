@@ -1,13 +1,25 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
+"../../../../IF_ID.srcs/sources_1/new/ALU.v" \
+"../../../../IF_ID.srcs/sources_1/new/ALUcontrol.v" \
+"../../../../IF_ID.srcs/sources_1/new/EX.v" \
+"../../../../IF_ID.srcs/sources_1/new/EX_MEM.v" \
 "../../../../IF_ID.srcs/sources_1/new/ID.v" \
+"../../../../IF_ID.srcs/sources_1/new/ID_EX_reg.v" \
 "../../../../IF_ID.srcs/sources_1/new/IF.v" \
+"../../../../IF_ID.srcs/sources_1/new/MEM_WB.v" \
 "../../../../IF_ID.srcs/sources_1/imports/IF_ID/PC.v" \
 "../../../../IF_ID.srcs/sources_1/imports/IF_ID/adder.v" \
+"../../../../IF_ID.srcs/sources_1/new/and.v" \
+"../../../../IF_ID.srcs/sources_1/imports/IF_ID/control_path.v" \
+"../../../../IF_ID.srcs/sources_1/new/data_memory.v" \
+"../../../../IF_ID.srcs/sources_1/new/forwarding.v" \
+"../../../../IF_ID.srcs/sources_1/new/hazard_detection.v" \
 "../../../../IF_ID.srcs/sources_1/imports/IF_ID/if_id_pipe.v" \
 "../../../../IF_ID.srcs/sources_1/imports/IF_ID/imm_gen.v" \
 "../../../../IF_ID.srcs/sources_1/imports/IF_ID/instruction_memory.v" \
 "../../../../IF_ID.srcs/sources_1/imports/IF_ID/mux2_1.v" \
+"../../../../IF_ID.srcs/sources_1/new/mux4_1.v" \
 "../../../../IF_ID.srcs/sources_1/imports/IF_ID/registers.v" \
 "../../../../IF_ID.srcs/sources_1/imports/IF_ID/risc_v.v" \
 "../../../../IF_ID.srcs/sim_1/new/test_riscv.v" \
