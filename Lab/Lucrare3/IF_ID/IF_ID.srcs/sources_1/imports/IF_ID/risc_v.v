@@ -275,8 +275,8 @@ ID_EX_reg pipe2( clk,
                RegWrite_WB,
                MemtoReg_WB);
                
- mux2_1 mux_WB(read_data_WB,
-                address_WB,
+ mux2_1 mux_WB(address_WB,
+                read_data_WB,
                 MemtoReg_WB,
                 ALU_DATA_WB);
   
@@ -303,7 +303,7 @@ control_path CONTROL_PATH_MODULE(OPCODE_ID,
 assign ALU_OUT_EX_out = ALU_OUT_EX;
 assign PC_MEM_out = PC_Branch_MEM;
 assign PCSrc_out = PCSrc;
-assign DATA_MEMORY_MEM_out = ALU_OUT_MEM;
+assign DATA_MEMORY_MEM_out = read_data_data_mem;
 assign ALU_DATA_WB_out = ALU_DATA_WB;
 assign forwardA_out = forwardA; 
 assign forwardB_out = forwardB;

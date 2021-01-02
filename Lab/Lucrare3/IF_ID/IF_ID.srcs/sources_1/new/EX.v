@@ -68,10 +68,10 @@ wire [3:0] ALU_cont;
                          ALUSrc_EX,
                          OUT_MUX_3);
 
-         ALUcontrol ALU_controlunit(ALUop_EX,    
-                                   FUNCT7_EX,    
-                                   FUNCT3_EX,    
-                                   ALU_cont); 
+         ALUcontrol ALU_controlunit(ALUop_EX,
+                                   FUNCT7_EX,
+                                   FUNCT3_EX,
+                                   ALU_cont);
          ALU alu_cot_mod(ALU_cont,
                          OUT_MUX_1,
                          OUT_MUX_3,

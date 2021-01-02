@@ -39,10 +39,15 @@ module data_memory(input clk,
         if(mem_write)
           memData[address[11:2]] <= write_data;
         
-        if (mem_read) 
+           
+    end
+    
+    always@(*)
+    begin
+      if (mem_read == 1) 
           read_data <= memData[address[11:2]];
-        else 
-          read_data <= read_data;     
+      else 
+          read_data <= read_data;  
     end
     
     
