@@ -14,7 +14,8 @@ module imm_gen(input [31:0] in,
       10'b1010010011: out <= {27'b0,in[24:20]};                             //srli,srai
       10'b0010010011: out <= {27'b0,in[24:20]};                              //slli
       10'bxxx0100011: out <= {{20{in[31]}},in[31:25],in[11:7]};               //store instructions
-      10'bxxx1100011: out <= {{20{in[31]}},in[31],in[7],in[30:25],in[11:8]}; //beq,bne,blt,bge,bltu,bgeu
+      10'bxxx1100011: out <= {{20{in[31]}},in[7],in[30:25],in[11:8], 1'b0};
+      //10'bxxx1100011: out <= {{20{in[31]}},in[31],in[7],in[30:25],in[11:8]}; //beq,bne,blt,bge,bltu,bgeu
       default: out <= 32'b0;
     endcase
   end

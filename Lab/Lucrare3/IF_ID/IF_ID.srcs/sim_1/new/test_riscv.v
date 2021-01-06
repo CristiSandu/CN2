@@ -19,7 +19,7 @@ module RISC_V_TB;
   wire [4:0] RS2_ID;*/
   
   
-  wire [31:0] PC_EX_out,PC_ID;
+  wire [31:0] PC_EX_out;
   wire [31:0] ALU_OUT_EX_out;
   wire [31:0] PC_MEM_out;
   wire PCSrc_out;

@@ -256,7 +256,6 @@ ID_EX_reg pipe2( clk,
                    REG_DATA2_MEM_FINAL,
                    read_data_data_mem);        
   
-  //assign PCSrc = ZERO_MEM & PC_Branch_MEM[0];
   and_gate and_gate(ZERO_MEM,Branch_MEM, PCSrc);
   
   MEM_WB pipe4(clk,

@@ -40,8 +40,6 @@ module ALUcontrol(input [1:0] ALUop,
             12'b1x010000x101: ALUinput = 4'b1001; // sra, srai
             12'b100000000011: ALUinput = 4'b0111; // sltu
             12'b100000000010: ALUinput = 4'b1000; // slt
-            12'b01xxxxxxx010: ALUinput = 4'b1000; // sw
-            12'b11xxxxxxx010: ALUinput = 4'b1000; // lw
             12'b01xxxxxxx00x: ALUinput = 4'b0110; // beq, bne
             12'b01xxxxxxx10x: ALUinput = 4'b1000; // blt, bge 
             12'b01xxxxxxx11x: ALUinput = 4'b0111; // bltu, bgeu

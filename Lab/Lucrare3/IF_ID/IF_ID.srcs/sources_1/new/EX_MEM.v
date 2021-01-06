@@ -54,7 +54,7 @@ module EX_MEM(input clk,
         if (reset) begin 
          ZERO_MEM <= 0;
          ALU_OUT_MEM <= 0;
-         PC_Branch_MEM <= 0;
+         PC_Branch_MEM <= 32'b0;
          REG_DATA2_MEM_FINAL <= 32'b0;
          RD_MEM <= 0;
          RegWrite_MEM <= 0;

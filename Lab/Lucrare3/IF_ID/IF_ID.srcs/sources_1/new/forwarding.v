@@ -28,23 +28,23 @@ module forwarding(input [4:0] rs1,
                   input mem_wb_regwrite,
                   output reg [1:0] forwardA,forwardB);
     always@(*) begin
-        if (ex_mem_regwrite && (ex_mem_rd != 0) && (ex_mem_rd == rs1)) 
+        if (ex_mem_regwrite && (ex_mem_rd != 5'b0) && (ex_mem_rd == rs1)) 
             forwardA <= 2'b10;
         else if (mem_wb_regwrite 
-                 && (mem_wb_rd != 0) 
-                 && !(ex_mem_regwrite && (ex_mem_rd != 0) 
+                 && (mem_wb_rd != 5'b0) 
+                 && !(ex_mem_regwrite && (ex_mem_rd != 5'b0) 
                  && (ex_mem_rd == rs1)) && (mem_wb_rd == rs1))
             forwardA <= 2'b01;     
         else 
             forwardA <= 2'b00;
         
         if(ex_mem_regwrite 
-           && (ex_mem_rd != 0) 
+           && (ex_mem_rd != 5'b0) 
            && (ex_mem_rd == rs2))
             forwardB <= 2'b10;
         else if (mem_wb_regwrite 
-                 && (mem_wb_rd != 0) 
-                 && !(ex_mem_regwrite && (ex_mem_rd != 0) 
+                 && (mem_wb_rd != 5'b0) 
+                 && !(ex_mem_regwrite && (ex_mem_rd != 5'b0) 
                  && (ex_mem_rd == rs2)) 
                  && (mem_wb_rd == rs2))
             forwardB <= 2'b01;

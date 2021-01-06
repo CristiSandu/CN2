@@ -66,10 +66,10 @@ module ID_EX_reg(input clk,
                    
      always@(posedge clk) begin
         if (reset) begin 
-             IMM_EX <= 0;
+             IMM_EX <= 32'b0;
              REG_DATA1_EX <= 0;
              REG_DATA2_EX <= 0;
-             PC_EX <= 0;
+             PC_EX <= 32'b0;
              FUNCT3_EX <= 0;
              FUNCT7_EX <= 0;
              OPCODE_EX <= 0;
