@@ -2,10 +2,6 @@
 module RISC_V_IF_ID(input clk,   //semnalul de ceas global
                     input reset, //semnalul de reset global
                     
-                    //semnale provenite din stagii viitoare
-                    //sunt pre-setate pentru aceasta lucrare
-                    //vor fi discutate in lucrarile urmatoare
-                      
                     output [31:0] PC_EX_out,
                     output [31:0] ALU_OUT_EX_out,
                     output [31:0] PC_MEM_out,
@@ -15,22 +11,11 @@ module RISC_V_IF_ID(input clk,   //semnalul de ceas global
                     output [1:0] forwardA_out, forwardB_out,
                     output pipeline_stall_out);
                     
-                    //semnale de iesire din ID
-                    //vor fi vizualizate pe simulare
-                    
-                    //semnalele de control generate in ID
-//                    output RegWrite_ID,  //semnal pentru scrierea in bancul de registri
-//                    output MemtoReg_ID,  //semnal pentru scrierea din memorie in registru
-//                    output MemRead_ID,   //semnal pentru citirea din memoria de date
-//                    output MemWrite_ID,  //semnal pentru scrierea in memoria de date
-//                    output [1:0] ALUop_ID, //codificarea operatiei efectuate de ALU 
-//                    output ALUSrc_ID,      //semnal pentru alegerea operanzilor in ALU
-//                    output Branch_ID);     //semnal pentru instructiuni de salt
   
   //////////////////////////////////////////IF signals////////////////////////////////////////////////////////
   
   wire [31:0] PC_Branch;  //PC-ul calculat in etapa EX pentru instructiunile de salt
-  //wire [31:0] ALU_DATA_WB;
+
   wire [31:0] PC_ID;       //adresa PC a instructiunii din etapa ID
   wire [31:0] INSTRUCTION_ID; //instructiunea curenta in etapa ID
   wire [31:0] IMM_ID;         //valoarea calculata
@@ -54,12 +39,13 @@ module RISC_V_IF_ID(input clk,   //semnalul de ceas global
   wire [4:0] RD_EX;
   wire [4:0] RS1_EX;
   wire [4:0] RS2_EX;
+
   wire RegWrite_EX,MemtoReg_EX,MemRead_EX,MemWrite_EX;
   wire [1:0] ALUop_EX;
   wire ALUSrc_EX;
   wire Branch_EX;
   wire ZERO_EX;
-  //wire [31:0] ALU_OUT_EX;
+
   wire [31:0] PC_Branch_EX;
   wire [31:0] REG_DATA2_EX_FINAL;
   wire [1:0] forwardA,forwardB;
@@ -78,7 +64,6 @@ module RISC_V_IF_ID(input clk,   //semnalul de ceas global
   wire Branch_MEM;
   
   wire [31:0] read_data_data_mem;
-  //wire PCSrc;
   
   wire [31:0] read_data_WB;
   wire [31:0] address_WB;
@@ -134,8 +119,6 @@ module RISC_V_IF_ID(input clk,   //semnalul de ceas global
                       );
  
  
- 
-
                       
  //////////////////////////////////////pipeline registers////////////////////////////////////////////////////
 ID_EX_reg pipe2( clk,
@@ -210,76 +193,81 @@ ID_EX_reg pipe2( clk,
           REG_DATA2_EX_FINAL);
 
           
-          
- EX_MEM pipe3(clk,
-              reset,
-              1'b1,
+ //////////////////////////////////////pipeline registers////////////////////////////////////////////////////
+EX_MEM pipe3(clk,
+            reset,
+            1'b1,
+            
+            ZERO_EX,
+            ALU_OUT_EX,
+            PC_Branch_EX,
+            REG_DATA2_EX_FINAL,
+            RD_EX,
+            RegWrite_EX,
+            MemtoReg_EX,
+            MemRead_EX,
+            MemWrite_EX,
+            ALUop_EX,
+            ALUSrc_EX,
+            Branch_EX,
               
-              ZERO_EX,
-              ALU_OUT_EX,
-              PC_Branch_EX,
-              REG_DATA2_EX_FINAL,
-              RD_EX,
-              RegWrite_EX,
-              MemtoReg_EX,
-              MemRead_EX,
-              MemWrite_EX,
-              ALUop_EX,
-              ALUSrc_EX,
-              Branch_EX,
-              
-             ZERO_MEM,
-             ALU_OUT_MEM,
-             PC_Branch_MEM,
-             REG_DATA2_MEM_FINAL,
-             RD_MEM,
-             RegWrite_MEM,
-             MemtoReg_MEM,
-             MemRead_MEM,
-             MemWrite_MEM,
-             ALUop_MEM,
-             ALUSrc_MEM,
-             Branch_MEM);
-  
- forwarding forw(RS1_EX,
-            RS2_EX,
+            ZERO_MEM,
+            ALU_OUT_MEM,
+            PC_Branch_MEM,
+            REG_DATA2_MEM_FINAL,
             RD_MEM,
-            RD_WB,
             RegWrite_MEM,
-            RegWrite_WB,
-            forwardA,forwardB);      
+            MemtoReg_MEM,
+            MemRead_MEM,
+            MemWrite_MEM,
+            ALUop_MEM,
+            ALUSrc_MEM,
+            Branch_MEM);
+  
+ //////////////////////////////////////forwarding module////////////////////////////////////////////////////
+
+forwarding forw(RS1_EX,
+                RS2_EX,
+                RD_MEM,
+                RD_WB,
+                RegWrite_MEM,
+                RegWrite_WB,
+                forwardA,forwardB);      
                  
- data_memory d_mem(clk,       
-                   MemRead_MEM,
-                   MemWrite_MEM,
-                   ALU_OUT_MEM,
-                   REG_DATA2_MEM_FINAL,
-                   read_data_data_mem);        
+ //////////////////////////////////////data_memory module////////////////////////////////////////////////////
+data_memory d_mem(clk,       
+                  MemRead_MEM,
+                  MemWrite_MEM,
+                  ALU_OUT_MEM,
+                  REG_DATA2_MEM_FINAL,
+                  read_data_data_mem);        
   
-  and_gate and_gate(ZERO_MEM,Branch_MEM, PCSrc);
+and_gate and_gate(ZERO_MEM,Branch_MEM, PCSrc);
   
-  MEM_WB pipe4(clk,
-               reset,
-               1'b1,
-                      
-               read_data_data_mem,
-               ALU_OUT_MEM,
-               RD_MEM,
-               RegWrite_MEM,
-               MemtoReg_MEM,
-                     
-               read_data_WB,
-               address_WB,
-               RD_WB,
-               RegWrite_WB,
-               MemtoReg_WB);
+ //////////////////////////////////////pipeline registers////////////////////////////////////////////////////
+MEM_WB pipe4(clk,
+            reset,
+            1'b1,
+                  
+            read_data_data_mem,
+            ALU_OUT_MEM,
+            RD_MEM,
+            RegWrite_MEM,
+            MemtoReg_MEM,
+                  
+            read_data_WB,
+            address_WB,
+            RD_WB,
+            RegWrite_WB,
+            MemtoReg_WB);
                
- mux2_1 mux_WB(address_WB,
-                read_data_WB,
-                MemtoReg_WB,
-                ALU_DATA_WB);
+ //////////////////////////////////////WB zone////////////////////////////////////////////////////
+mux2_1 mux_WB(address_WB,
+              read_data_WB,
+              MemtoReg_WB,
+              ALU_DATA_WB);
   
- hazard_detection haz_det(RD_EX,
+hazard_detection haz_det(RD_EX,
                         RS1_ID,
                         RS2_ID,
                         MemRead_EX,
@@ -297,8 +285,6 @@ control_path CONTROL_PATH_MODULE(OPCODE_ID,
                                 ALUSrc_ID,
                                 RegWrite_ID);   
             
- 
-                        
 assign ALU_OUT_EX_out = ALU_OUT_EX;
 assign PC_MEM_out = PC_Branch_MEM;
 assign PCSrc_out = PCSrc;
@@ -306,6 +292,7 @@ assign DATA_MEMORY_MEM_out = read_data_data_mem;
 assign ALU_DATA_WB_out = ALU_DATA_WB;
 assign forwardA_out = forwardA; 
 assign forwardB_out = forwardB;
-assign pipeline_stall_out = control_sel;                                       
+assign pipeline_stall_out = control_sel;        
+
 endmodule
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////

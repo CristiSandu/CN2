@@ -38,8 +38,6 @@ module data_memory(input clk,
     always@(posedge clk) begin
         if(mem_write)
           memData[address[11:2]] <= write_data;
-        
-           
     end
     
     always@(*)
